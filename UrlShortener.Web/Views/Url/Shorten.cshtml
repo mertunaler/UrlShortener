@@ -1,0 +1,14 @@
+﻿@model UrlShortener.Web.Models.Entity.Url
+
+<form asp-action="ShortenUrl" method="post">
+    <label for="longUrl">Enter the URL:</label>
+    <input type="text" id="longUrl" name="longUrl" asp-for="longUrl">
+    <button type="submit">Shorten URL</button>
+</form>
+
+@{
+    if (Model != null)
+    {
+        <p>Shortened URL: <a href="@Model.longUrl">@Model.shortUrl</a></p>
+    }
+}
